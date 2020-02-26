@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    //, UICollectionViewDelegateFlowLayout
+    //UICollectionViewDelegateFlowLayout
     let registerCell = "RegCollectionCell"
     
     override func viewDidLoad() {
@@ -35,7 +35,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "registerCell", for: indexPath)
         cell.backgroundColor = .lightGray

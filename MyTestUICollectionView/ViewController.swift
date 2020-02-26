@@ -11,8 +11,6 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     //, UICollectionViewDelegateFlowLayout
     let registerCell = "RegCollectionCell"
-    var myCollectionView: UICollectionView! = UICollectionView()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let layout = UICollectionViewFlowLayout()
         
         //layout.scrollDirection = .horizontal
-        myCollectionView = UICollectionView.init(frame: view.bounds, collectionViewLayout: layout)
+        let myCollectionView = UICollectionView.init(frame: view.bounds, collectionViewLayout: layout)
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self

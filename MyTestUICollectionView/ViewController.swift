@@ -9,20 +9,42 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    //, UICollectionViewDelegateFlowLayout
+    let registerCell = "RegCollectionCell"
+    var myCollectionView: UICollectionView! = UICollectionView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .green
+        let layout = UICollectionViewFlowLayout()
+        
+        //layout.scrollDirection = .horizontal
+        myCollectionView = UICollectionView.init(frame: view.bounds, collectionViewLayout: layout)
+        
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self
+        myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: registerCell)
+        view.addSubview(myCollectionView)
+        
         // Do any additional setup after loading the view.
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        5
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "registerCell", for: indexPath)
+        cell.backgroundColor = .lightGray
+        return cell
     }
+    
+    
 // test add
 }
 

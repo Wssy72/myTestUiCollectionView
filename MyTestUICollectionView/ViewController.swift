@@ -11,11 +11,12 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let CellId = "RegCollectionCell"
+    //var labelCell = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .red
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
@@ -43,11 +44,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 30
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId, for: indexPath)
-        cell.backgroundColor = .green
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId, for: indexPath)
+        var labelCell = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: cell.bounds.size.height))
+        cell.backgroundColor = .green
+        cell.contentView.addSubview(labelCell)
+        labelCell.text = indexPath.description
+        labelCell.textAlignment = .center
         return cell
         
     }
+    
+    //frame: CGRectMake(0, 0, cell.bounds.size.width, 40)
 }
 

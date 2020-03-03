@@ -46,11 +46,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId, for: indexPath)
-        var labelCell = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: cell.bounds.size.height))
+        let labelCell = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: cell.bounds.size.height))
         cell.backgroundColor = .green
         cell.contentView.addSubview(labelCell)
         labelCell.text = indexPath.description
         labelCell.textAlignment = .center
+        labelCell.clipsToBounds = true
+        
+        labelCell.layer.cornerRadius = 20
         return cell
         
     }

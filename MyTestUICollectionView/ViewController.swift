@@ -26,20 +26,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        //myCollectionView.translatesAutoresizingMaskIntoConstraints = false
+         //myCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CellId)
         view.addSubview(myCollectionView)
         
-        //myCollectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        //myCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        //myCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        //myCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
-    //func numberOfSections(in collectionView: UICollectionView) -> Int {
-    //   1
-    //}
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30
     }
@@ -57,7 +51,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
         
     }
-    
-    //frame: CGRectMake(0, 0, cell.bounds.size.width, 40)
+   
 }
 

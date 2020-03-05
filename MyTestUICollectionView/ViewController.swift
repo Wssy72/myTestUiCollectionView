@@ -11,12 +11,16 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let CellId = "RegCollectionCell"
-    //var labelCell = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Navigation"
+        
         view.backgroundColor = .red
+        
+        navigationController?.navigationBar.barTintColor = .black
+        
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)

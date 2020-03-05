@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         view.backgroundColor = .red
         
         navigationController?.navigationBar.barTintColor = .black
-        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.green]
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)

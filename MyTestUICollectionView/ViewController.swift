@@ -15,11 +15,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Navigation"
-        
         view.backgroundColor = .red
-        
-        navigationController?.navigationBar.barTintColor = .black
+        title = "Navigation"
+        navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.green]
         
         let layout = UICollectionViewFlowLayout()
@@ -27,7 +25,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         layout.itemSize = CGSize(width: 150, height: 50) //view.frame.width
         layout.scrollDirection = .horizontal
         let myCollectionView = UICollectionView.init(frame: view.bounds, collectionViewLayout: layout)
-        
+        myCollectionView.backgroundColor = .white
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
          //myCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,11 +33,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CellId)
         view.addSubview(myCollectionView)
         
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 45
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
